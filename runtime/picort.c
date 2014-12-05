@@ -17,7 +17,7 @@
  *	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <stdint.h>
+#include "stdint.h"
 
 #ifndef _INLINE_BINTEST_
 #include <math.h>
@@ -361,7 +361,7 @@ static int _FIXED_POINT_SCALE_ = (1<<15);
 					float q;
 					int t;
 
-					if(classify_region(od, &q, r, c, s, cost, sint, pixels, nrows, ncols, ldim)>0)
+					if(classify_region(od, &q, r, c, s, cost, sint, (uint8_t*)pixels, nrows, ncols, ldim)>0)
 					{
 						if(ndetections < maxndetections)
 						{
